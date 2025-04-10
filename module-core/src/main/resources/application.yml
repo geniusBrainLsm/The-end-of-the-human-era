@@ -1,0 +1,13 @@
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
+    tryItOutEnabled: true
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'admin'
+      paths-to-match: '/admin/**'
+    - group: 'user'
+      paths-to-match: '/user/**'

@@ -1,3 +1,29 @@
-spring.application.name: server
+spring:
+  application:
+    name: server
+  config:
+    import: classpath:user-settings/settings.yml
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cec
+    username: cec
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  redis:
+    host: localhost
+    port: 6379
 
-spring.config.import: classpath:user-settings/settings.yml
+jwt:
+  secret: your-256-bit-secret-key-here-must-be-at-least-32-characters
+  access-token-validity-in-seconds: 3600  # 1시간
+  refresh-token-validity-in-seconds: 1209600  # 14일
+
+server:
+  port: 8080
